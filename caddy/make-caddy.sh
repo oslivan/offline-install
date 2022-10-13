@@ -31,12 +31,12 @@ cat <<-DELIMITER > init.sh
 sudo cp bin/caddy /usr/bin/
 sudo cp caddy.service /etc/systemd/system/caddy.service
 sudo groupadd --system caddy
-sudo useradd --system
-    --gid caddy
-    --create-home
-    --home-dir /var/lib/caddy
-    --shell /usr/sbin/nologin
-    --comment "Caddy web server"
+sudo useradd --system \\
+    --gid caddy \\
+    --create-home \\
+    --home-dir /var/lib/caddy \\
+    --shell /usr/sbin/nologin \\
+    --comment "Caddy web server" \\
     caddy
 sudo mkdir /etc/caddy
 sudo cp Caddyfile /etc/caddy
@@ -48,8 +48,8 @@ chmod +x ./init.sh
 echo "Create README.md"
 cat <<-DELIMITER > README.md
 ## 使用
-```bash
+\`\`\`bash
 sudo ./init.sh
-```
+\`\`\`
 DELIMITER
 
